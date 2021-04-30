@@ -3,124 +3,179 @@
 
 
 function myPosts (){
-    let posts = "https://jsonplaceholder.typicode.com/posts";
+    let post = "https://jsonplaceholder.typicode.com/posts";                                                                        
     
 
 
-    fetch (posts)
+    fetch (post)
     .then(res => res.json())
-    // .then(function myFunction (){
-    //     var myJson = JSON.stringify(posts);
-    //     var result = [];
-    
-    //     for (var i in myJson)
-    //         result.push([i, myJson [i]]);
-    // })
-    .then(posts => {document.getElementById('posts').innerHTML = JSON.stringify(posts) });
+    .then(data => {
+        let posts = '';
+        data.forEach(element => {
+            posts += `<div class= "post-card">
+            <ul>
+                <li  class ="post-list">${element.body}</li>
+                <li  class ="post-list">${element.id}</li>
+                <li  class ="post-list">${element.title}</li>
+                <li  class ="post-list">${element.userId}</li>
+            </ul>
+            </div>`
 
-  
-    console.log(posts);
+        document.getElementById('posts').innerHTML = posts;
+        });
+    
+        console.log(post);
+    });
 }
 
-// myFunction();
+
 
 
 function myComments (){
-    let comments = "https://jsonplaceholder.typicode.com/comments";
+    let comment = "https://jsonplaceholder.typicode.com/comments";
     
 
 
-    fetch (comments)
+    fetch (comment)
     .then(res => res.json())
-    // .then(function myFunction (){
-    //     var myJson = JSON.stringify(comments);
-    //     var result = [];
-    
-    //     for (var i in myJson)
-    //         result.push([i, myJson [i]]);
-    // })
-    .then(comments => {document.getElementById('comments').innerHTML = JSON.stringify(comments) });
+    .then(data => {
+        let comments = '';
+        data.forEach(element => {
+            comments += `<div class= "comment-card">
+            <ul>
+                <li  class ="comment-list">${element.body}</li>
+                <li  class ="comment-list">${element.email}</li>
+                <li  class ="comment-list">${element.id}</li>
+                <li  class ="comment-list">${element.name}</li>
+                <li  class ="comment-list">${element.postId}</li>
+            </ul>
+            </div>`
 
-  
-    console.log(comments);
+        document.getElementById('comments').innerHTML = comments;
+        });
+    
+        console.log(comment);
+    });
 }
 
 function myAlbums (){
-    let albums = "https://jsonplaceholder.typicode.com/albums";
+    let album = "https://jsonplaceholder.typicode.com/albums";
     
 
 
-    fetch (albums)
+    fetch (album)
     .then(res => res.json())
-    // .then(function myFunction (){
-    //     var myJson = JSON.stringify(albums);
-    //     var result = [];
+    .then(data => {
+        let albums = '';
+        data.forEach(element => {
+            albums += `<div class= "album-card">
+            <ul>
+                <li  class ="album-list">${element.id}</li>
+                <li  class ="album-list">${element.title}</li>
+                <li  class ="album-list">${element.userId}</li>
+            </ul>
+            </div>`
+
+        document.getElementById('albums').innerHTML = albums;
+        });
     
-    //     for (var i in myJson)
-    //         result.push([i, myJson [i]]);
-    // })
-    .then(albums => {document.getElementById('albums').innerHTML = JSON.stringify(albums) });
+        console.log(album);
+    });
 
   
-    console.log(albums);
+    
 }
 
 function myPhotos (){
-    let photos = "https://jsonplaceholder.typicode.com/photos";
+    let photo = "https://jsonplaceholder.typicode.com/photos";
     
 
 
-    fetch (photos)
+    fetch (photo)
     .then(res => res.json())
-    // .then(function myFunction (){
-    //     var myJson = JSON.stringify(photos);
-    //     var result = [];
-    
-    //     for (var i in myJson)
-    //         result.push([i, myJson [i]]);
-    // })
-    .then(photos => {document.getElementById('photos').innerHTML = JSON.stringify(photos) });
+    .then(data => {
+        let photos = '';
+        data.forEach(element => {
+            photos += `<div class= "photo-card">
+            <ul>
+                <li  class ="todo-list1">${element.albumId}</li>
+                <li  class ="todo list">${element.id}</li>
+                <li  class ="todo-list">${element.thumbnailUrl}</li>
+                <li  class ="todo-list">${element.title}</li>
+                <li  class ="todo-list">${element.url}}</li>
+            </ul>
 
-  
-    console.log(photos);
+                
+            </div>`
+
+        document.getElementById('photos').innerHTML = photos;
+        });
+    
+        console.log(photo);
+
+         
+    
+       
+    });
+     
 }
 
 function myTodos (){
-    let todos = "https://jsonplaceholder.typicode.com/todos";
+    let todo = "https://jsonplaceholder.typicode.com/todos";
     
 
 
-    fetch (todos)
+    fetch (todo)
     .then(res => res.json())
-    // .then(function myFunction (){
-    //     var myJson = JSON.stringify(todos);
-    //     var result = [];
+    .then(data => {
+        let todos = '';
+        data.forEach(element => {
+            todos += `<div class= "todo-card">
+            <ul>
+                <li  class ="todo-list1">${element.completed}</li>
+                <li  class ="todo list">${element.id}</li>
+                <li  class ="todo-list">${element.title}</li>
+                <li  class ="todo-list">${element.userId}</li>
+            </ul>
+            </div>`
+
+        document.getElementById('todos').innerHTML = todos;
+        });
     
-    //     for (var i in myJson)
-    //         result.push([i, myJson [i]]);
-    // })
-    .then(todos => {document.getElementById('todos').innerHTML = JSON.stringify(todos) });
+    
+    });
 
   
-    console.log(todos);
+    console.log(todo);
 }
 
-function myUsers (){
-    let users = "https://jsonplaceholder.typicode.com/users";
+function myUsers() {
+    let user = "https://jsonplaceholder.typicode.com/users";
     
 
 
-    fetch (users)
+    fetch (user)
     .then(res => res.json())
-    // .then(function myFunction (){
-    //     var myJson = JSON.stringify(users);
-    //     var result = [];
+    .then(data => {
+        let users = '';
+        data.forEach(element => {
+            users += `<div class= "user-card">
+            <ul>
+                <li  class ="user-list1">${element.name}</li>
+                <li  class ="user list">${element.phone}</li>
+                <li  class ="user-list">${element.website}</li>
+                <li  class ="user-list">${element.username}</li>
+                <li  class ="user-list">${element.email}</li>
+                <li  class ="user-list">${element.address.street}</li>
+                <li  class ="user-list">${element.company.name}</li>
+            </ul>
+            </div>`
+
+        document.getElementById('users').innerHTML = users;
+        });
     
-    //     for (var i in myJson)
-    //         result.push([i, myJson [i]]);
-    // })
-    .then(users => {document.getElementById('users').innerHTML = JSON.stringify(users) });
+        console.log(user);
+    });
 
   
-    console.log(users);
-}
+};
